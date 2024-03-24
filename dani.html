@@ -1,0 +1,158 @@
+
+<html lang="en">
+
+<title>Quiz by Dani</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .options label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Quiz made by Dani</h1>
+  <div id="quiz">
+    <div class="question">
+      <p>1. What does HTML stand for?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
+        <label><input type="radio" name="q1" value="b"> Hyperlinks and Text Markup Language</label>
+        <label><input type="radio" name="q1" value="c"> Home Tool Markup Language</label>
+        <label><input type="radio" name="q1" value="d"> Hyper Text Makeup Language</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>2. Which tag is used to define an unordered list in HTML?</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="a"> &lt;ul&gt;</label>
+        <label><input type="radio" name="q2" value="b"> &lt;ol&gt;</label>
+        <label><input type="radio" name="q2" value="c"> &lt;li&gt;</label>
+        <label><input type="radio" name="q2" value="d"> &lt;list&gt;</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>3. Which tag is used to create a hyperlink in HTML?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="a"> &lt;a&gt;</label>
+        <label><input type="radio" name="q3" value="b"> &lt;link&gt;</label>
+        <label><input type="radio" name="q3" value="c"> &lt;href&gt;</label>
+        <label><input type="radio" name="q3" value="d"> &lt;hyper&gt;</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>4. Which attribute is used to specify the URL of the image in HTML?</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="a"> src</label>
+        <label><input type="radio" name="q4" value="b"> href</label>
+        <label><input type="radio" name="q4" value="c"> link</label>
+        <label><input type="radio" name="q4" value="d"> url</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>5. Which tag is used to create a table in HTML?</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="a"> &lt;table&gt;</label>
+        <label><input type="radio" name="q5" value="b"> &lt;tr&gt;</label>
+        <label><input type="radio" name="q5" value="c"> &lt;td&gt;</label>
+        <label><input type="radio" name="q5" value="d"> &lt;th&gt;</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>6. What does CSS stand for?</p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="a"> Cascading Style Sheets</label>
+        <label><input type="radio" name="q6" value="b"> Creative Style Sheets</label>
+        <label><input type="radio" name="q6" value="c"> Computer Style Sheets</label>
+        <label><input type="radio" name="q6" value="d"> Colorful Style Sheets</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>7. Which property is used to change the background color of an element in CSS?</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="a"> color</label>
+        <label><input type="radio" name="q7" value="b"> background-color</label>
+        <label><input type="radio" name="q7" value="c"> bg-color</label>
+        <label><input type="radio" name="q7" value="d"> background</label>
+      </div>
+    </div>
+    <div class="question">
+      <p>8. What does the "href" attribute specify?</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="a"> The URL of the page to link to</label>
+        <label><input type="radio" name="q8" value="b"> The height of the element</label>
+        <label><input type="radio" name="q8" value="c"> The width of the element</label>
+        <label><input type="radio" name="q8" value="d"> The background color of the element</label>
+      </div>
+    </div>
+
+  </div>
+  <button id="submitBtn">Submit Answers</button>
+</div>
+
+<script>
+document.getElementById('submitBtn').addEventListener('click', function() {
+  const answers = {
+    q1: 'a',
+    q2: 'a',
+    q3: 'a',
+    q4: 'a',
+    q5: 'a',
+    q6: 'a',
+    q7: 'a',
+    q8: 'a',
+
+  };
+  
+  let score = 0;
+  for (const key in answers) {
+    const selectedOption = document.querySelector('input[name="' + key + '"]:checked');
+    if (selectedOption) {
+      if (selectedOption.value === answers[key]) {
+        score++;
+      }
+    }
+  }
+  
+  alert('Your score is: ' + score + ' out of 8');
+});
+</script>
+
+</body>
+</html>
